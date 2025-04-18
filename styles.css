@@ -4,6 +4,7 @@
     --dark-color: #333;
     --light-color: #f4f4f4;
     --success-color: #5cb85c;
+    --banner-bg: linear-gradient(135deg, rgba(24, 24, 97, 0.9), rgba(7, 58, 107, 0.9));
 }
 
 * {
@@ -29,7 +30,7 @@ ul {
 
 /* Header */
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://source.unsplash.com/random/1600x900/?code') no-repeat center center/cover;
+    background: var(--banner-bg), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&h=900&q=80') no-repeat center center/cover;
     color: #fff;
     height: 100vh;
     position: relative;
@@ -198,7 +199,7 @@ input, textarea {
 
 /* Footer */
 footer {
-    background: var(--dark-color);
+    background: var(--banner-bg);
     color: #fff;
     text-align: center;
     padding: 2rem;
