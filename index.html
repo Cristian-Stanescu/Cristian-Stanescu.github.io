@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UnlimitedSoftware | ASP.NET Core Development Specialists</title>
+    <title>UnlimitedSoftware | ASP.NET Core Development Specialist</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -11,7 +11,10 @@
     <header>
         <nav>
             <div class="logo">UnlimitedSoftware</div>
-            <ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -56,15 +59,13 @@
         <p>Ready to discuss your project? Get in touch today!</p>
         <div class="contact-info">
             <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p>contact@unlimitedsoftware.com</p>
+                <p><i class="fas fa-envelope"></i>contact@unlimitedsoftware.com</p>
             </div>
             <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p>+1 (555) 123-4567</p>
+                <p><i class="fas fa-phone"></i>+1 (555) 123-4567</p>
             </div>
         </div>
-        <form>
+        <form action="https://formsubmit.co/contact@unlimitedsoftware.com" method="POST">
             <input type="text" placeholder="Name" required>
             <input type="email" placeholder="Email" required>
             <textarea placeholder="Project Details" rows="5" required></textarea>
@@ -75,5 +76,24 @@
     <footer>
         <p>&copy; 2025 UnlimitedSoftware. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.nav-menu li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
